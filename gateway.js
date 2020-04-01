@@ -1,3 +1,9 @@
+function sleep(ms) {
+    return new Promise(resolve => {
+        setTimeout(() => resolve(), ms);
+    });
+}
+
 (async () => {
 
     while(!window.connectionManager) { await sleep(50); }
