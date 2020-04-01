@@ -7,9 +7,7 @@ function sleep(ms) {
 (async () => {
 
     while(!window.connectionManager) { await sleep(50); }
-
-    log("script loaded");
-
+    
     window.socket = io("http://localhost:3000");
 
     window.connectionManager.on("data", data => {
